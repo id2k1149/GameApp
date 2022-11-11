@@ -8,10 +8,19 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        setupViewController()
+    }
+    
+    private func setupViewController() {
+        let bag = Bag.shared
+        let randomNaumber = bag.getRandomNumber()
+        
     }
 
 
