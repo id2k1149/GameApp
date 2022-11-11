@@ -10,7 +10,7 @@ import Foundation
 class Bag {
     static let shared = Bag()
     
-    var barrels = Array(1...9)
+    var barrels = Array(1...99)
     
     private init() {}
     
