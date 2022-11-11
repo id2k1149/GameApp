@@ -21,6 +21,8 @@ class MainViewController: UIViewController {
         noButton.layer.cornerRadius = 10
         
         questionLabel.text = getRandomNumber()
+        
+        playGame()
     }
     
     // MARK: - @IBActions
@@ -42,6 +44,14 @@ extension MainViewController {
         } else {
             return "Do you have \(result) in your card?"
         }
+    }
+    
+    private func playGame() {
+        let playerOne = Player(isHumam: true)
+        playerOne.play()
+        
+        let playerTwo = Player(isHumam: false)
+        playerTwo.play()
     }
     
 }

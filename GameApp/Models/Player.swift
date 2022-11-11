@@ -7,4 +7,27 @@
 
 import Foundation
 
-
+class Player {
+    let isHuman: Bool
+    
+    init(isHumam: Bool = true) {
+        self.isHuman = isHumam
+    }
+    
+    func play() {
+        if isHuman {
+            playAsHuman()
+        } else {
+            playAsCPU()
+        }
+    }
+    
+    func playAsHuman() {
+        
+    }
+    
+    func playAsCPU() {
+        
+    }
+    
+}
