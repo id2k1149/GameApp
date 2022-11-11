@@ -9,20 +9,18 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet var randomNumberLabel: UILabel!
+    
+    
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setupViewController()
+    
+        randomNumberLabel.text = getRandomNumber().formatted()
     }
     
-    private func setupViewController() {
-        let bag = Bag.shared
-        let randomNaumber = bag.getRandomNumber()
-        
+    private func getRandomNumber() -> Int {
+        Bag.shared.getRandomNumber()
     }
-
-
 }
-
