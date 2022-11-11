@@ -17,6 +17,9 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
+        randomNumberLabel.textColor = .blue
+        randomNumberLabel.font = .boldSystemFont(ofSize: 30)
+
         yesButton.layer.cornerRadius = 10
         noButton.layer.cornerRadius = 10
         
@@ -27,6 +30,7 @@ class MainViewController: UIViewController {
     @IBAction func yesButtonTapped() {
     }
     @IBAction func noButtonTapped() {
+        randomNumberLabel.text = getRandomNumber().formatted()
     }
     
 }
