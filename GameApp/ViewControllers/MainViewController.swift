@@ -43,23 +43,19 @@ extension MainViewController {
     
     private func getRandomNumber() -> String {
         let result = Bag.shared.getNextBarrel()
-        if result == "Bag is empty" {
-            return result
-        } else {
-            return "Do you have \(result) in your card?"
-        }
+        return result != "Bag is empty"
+        ? "Do you have \(result) in your card?"
+        : result
     }
     
     private func playGame() {
-        let playerOne = Player(isHumam: true)
-//        rowOneLabel.text = playerOne.card.row1
+        let number = Int(questionLabel.text ?? "100")
         
-        playerOne.card.showCard()
-        playerOne.play()
+        let playerOne = Player(isHumam: true)
+        playerOne.checkCard(for: number ?? 100)
         
         let playerTwo = Player(isHumam: false)
-        playerTwo.card.showCard()
-        playerTwo.play()
+        playerTwo.checkCard(for: number ?? 100)
     }
     
 }

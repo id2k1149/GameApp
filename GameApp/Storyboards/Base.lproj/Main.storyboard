@@ -23,8 +23,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ph4-hF-948">
+                                <rect key="frame" x="16" y="161" width="102" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mKK-8d-UAV" userLabel="Card Stack View">
-                                <rect key="frame" x="16" y="148" width="382" height="130"/>
+                                <rect key="frame" x="16" y="198" width="382" height="130"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="dgi-Tb-kQp" userLabel="Row 1 Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="30"/>
@@ -244,13 +250,16 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="mKK-8d-UAV" firstAttribute="top" secondItem="BZu-sr-BiK" secondAttribute="bottom" constant="50" id="0vc-Yz-tpI"/>
+                            <constraint firstItem="mKK-8d-UAV" firstAttribute="top" secondItem="BZu-sr-BiK" secondAttribute="bottom" constant="100" id="0vc-Yz-tpI"/>
                             <constraint firstItem="BZu-sr-BiK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="5eM-Uk-BAb"/>
+                            <constraint firstItem="Ph4-hF-948" firstAttribute="top" secondItem="BZu-sr-BiK" secondAttribute="bottom" constant="63" id="5lm-4F-wl5"/>
                             <constraint firstItem="BZu-sr-BiK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="9Re-t5-wOw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BZu-sr-BiK" secondAttribute="trailing" constant="40" id="DA2-zh-eXT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5md-FB-qd2" secondAttribute="bottom" constant="25" id="KGl-ct-WST"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ph4-hF-948" secondAttribute="trailing" constant="296" id="Lgg-nK-ZZA"/>
                             <constraint firstItem="5md-FB-qd2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zf8-1r-VjY"/>
                             <constraint firstItem="mKK-8d-UAV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="dhr-xL-4Zp"/>
+                            <constraint firstItem="Ph4-hF-948" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="tfT-SK-coq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mKK-8d-UAV" secondAttribute="trailing" constant="16" id="zEI-9V-qRY"/>
                         </constraints>
                     </view>

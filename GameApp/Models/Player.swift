@@ -8,30 +8,33 @@
 import Foundation
 
 class Player {
+    let name: String!
     let isHuman: Bool
     var card = Card()
     
     init(isHumam: Bool = true) {
         self.isHuman = isHumam
-        
-    }
-    
-    func play() {
-        if isHuman {
-            playAsHuman()
+        if isHumam {
+            name = "Your"
         } else {
-            playAsCPU()
+            name = "Player #\(Int.random(in: 1...5))"
         }
     }
     
-    func playAsHuman() {
-        print("playAsHuman()")
-//        card.showCard()
-        
+    func checkCard(for number: Int) {
+        if card.numbersOnCard.contains(number) {
+            guard let index = card.numbersOnCard.firstIndex(of: number) else { return }
+            card.numbersOnCard.remove(at: index)
+            
+            checkRow(in: &card.row1, for: number)
+            checkRow(in: &card.row2, for: number)
+            checkRow(in: &card.row3, for: number)
+        }
     }
     
-    func playAsCPU() {
-        
+    private func checkRow(in row: inout[(number: String, isCrossed: Bool)], for number: Int) {
+        if let index = row.firstIndex(where: { $0.number == number.formatted() }) {
+            row[index].isCrossed = true
+        }
     }
-    
 }

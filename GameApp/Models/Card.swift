@@ -20,7 +20,7 @@ class Card {
         row3 = setRow(for: "row 3")
     }
     
-    func setRow(for rowNumber: String) -> [(String, Bool)] {
+    private func setRow(for rowNumber: String) -> [(String, Bool)] {
         var counter = 0
         var initialArray = Array(1...90)
         var row = Array(repeating: ("", false), count: 9)
@@ -61,14 +61,14 @@ class Card {
         return row
     }
     
-    func showCard() {
+    func getCard() {
         print(numbersOnCard)
-        print(showRow(row1))
-        print(showRow(row2))
-        print(showRow(row3))
+        print(getRow(row1))
+        print(getRow(row2))
+        print(getRow(row3))
     }
     
-    func showRow(_ row: [(number: String, isCrossed: Bool)]) -> String {
+    private func getRow(_ row: [(number: String, isCrossed: Bool)]) -> String {
         var result = ""
         row.forEach {
             result += $0.number + " "
