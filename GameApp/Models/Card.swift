@@ -8,19 +8,19 @@
 import Foundation
 
 class Card {
+    var row1: [(number: String, isCrossed: Bool)]!
+    var row2: [(number: String, isCrossed: Bool)]!
+    var row3: [(number: String, isCrossed: Bool)]!
+    
     var numbersOnCard: [Int] = []
     
-    var row1: [(number: String, isCrossed: Bool)] = []
-    var row2: [(number: String, isCrossed: Bool)] = []
-    var row3: [(number: String, isCrossed: Bool)] = []
-    
-    func getNewCard() {
-        row1 = generateRow(isLastRow: false)
-        row2 = generateRow(isLastRow: false)
-        row3 = generateRow(isLastRow: true)
+    init() {
+        row1 = setRow(for: "row 1")
+        row2 = setRow(for: "row 2")
+        row3 = setRow(for: "row 3")
     }
     
-    func generateRow(isLastRow: Bool) -> [(String, Bool)] {
+    func setRow(for rowNumber: String) -> [(String, Bool)] {
         var counter = 0
         var initialArray = Array(1...90)
         var row = Array(repeating: ("", false), count: 9)
@@ -34,11 +34,18 @@ class Card {
                 let index = randomNumber == 90 ? 8 : randomNumber / 10
                 
                 if row[index] == ("", false) {
-                    
-                    if isLastRow {
-                        if row1[index] != ("", false) && row2[index] != ("", false) {
+                    switch rowNumber {
+                    case "row 2":
+                        if counter < 3 && row1[index] != ("", false) {
                             continue
                         }
+                    case "row 3":
+                        if counter < 4 && row2[index] != ("", false) {
+                            continue
+                        }
+                        
+                    default:
+                        break
                     }
                     
                     numbersOnCard.append(randomNumber)
@@ -56,15 +63,15 @@ class Card {
     
     func showCard() {
         print(numbersOnCard)
-        print(row1)
-        print(row2)
-        print(row3)
+        print(showRow(row1))
+        print(showRow(row2))
+        print(showRow(row3))
     }
     
-    func showRow(row: [(number: String, isCrossed: Bool)]) -> String {
+    func showRow(_ row: [(number: String, isCrossed: Bool)]) -> String {
         var result = ""
         row.forEach {
-            result += $0.number
+            result += $0.number + " "
         }
         return result
     }
