@@ -29,6 +29,8 @@ class MainViewController: UIViewController {
         
         playGame()
         
+    
+        
     }
     
     // MARK: - @IBActions
@@ -54,6 +56,7 @@ extension MainViewController {
     
     private func playGame() {
         let playerOne = Player(isHumam: true)
+//        rowOneLabel.text = playerOne.card.row1
         
         playerOne.card.showCard()
         playerOne.play()

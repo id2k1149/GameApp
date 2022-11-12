@@ -61,4 +61,12 @@ class Card {
         print(row3)
     }
     
+    func showRow(row: [(number: String, isCrossed: Bool)]) -> String {
+        var result = ""
+        row.forEach {
+            result += $0.number
+        }
+        return result
+    }
+    
 }
