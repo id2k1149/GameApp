@@ -13,7 +13,7 @@ class Player {
     
     init(isHumam: Bool = true) {
         self.isHuman = isHumam
-        card.getNewCard()
+        
     }
     
     func play() {

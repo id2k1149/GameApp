@@ -12,10 +12,6 @@ class MainViewController: UIViewController {
     // MARK: - @IBOutlets
     @IBOutlet var questionLabel: UILabel!
     
-    @IBOutlet var rowOneLabel: UILabel!
-    @IBOutlet var rowTwoLabel: UILabel!
-    @IBOutlet var rowThreeLabel: UILabel!
-    
     @IBOutlet var yesButton: UIButton!
     @IBOutlet var noButton: UIButton!
     
