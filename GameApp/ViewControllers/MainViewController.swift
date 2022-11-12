@@ -48,6 +48,8 @@ extension MainViewController {
     
     private func playGame() {
         let playerOne = Player(isHumam: true)
+        print(playerOne.isHuman)
+        playerOne.card.showCard()
         playerOne.play()
         
         let playerTwo = Player(isHumam: false)

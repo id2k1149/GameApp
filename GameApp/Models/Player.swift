@@ -9,9 +9,11 @@ import Foundation
 
 class Player {
     let isHuman: Bool
+    var card = Card()
     
     init(isHumam: Bool = true) {
         self.isHuman = isHumam
+        card.getNewCard()
     }
     
     func play() {
@@ -23,6 +25,8 @@ class Player {
     }
     
     func playAsHuman() {
+        print("playAsHuman()")
+//        card.showCard()
         
     }
     
