@@ -11,6 +11,11 @@ class MainViewController: UIViewController {
     
     // MARK: - @IBOutlets
     @IBOutlet var questionLabel: UILabel!
+    
+    @IBOutlet var rowOneLabel: UILabel!
+    @IBOutlet var rowTwoLabel: UILabel!
+    @IBOutlet var rowThreeLabel: UILabel!
+    
     @IBOutlet var yesButton: UIButton!
     @IBOutlet var noButton: UIButton!
     
@@ -23,6 +28,7 @@ class MainViewController: UIViewController {
         questionLabel.text = getRandomNumber()
         
         playGame()
+        
     }
     
     // MARK: - @IBActions
@@ -48,11 +54,12 @@ extension MainViewController {
     
     private func playGame() {
         let playerOne = Player(isHumam: true)
-        print(playerOne.isHuman)
+        
         playerOne.card.showCard()
         playerOne.play()
         
         let playerTwo = Player(isHumam: false)
+        playerTwo.card.showCard()
         playerTwo.play()
     }
     

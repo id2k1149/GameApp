@@ -58,13 +58,39 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="kV4-jh-xgQ">
+                                <rect key="frame" x="16" y="148" width="382" height="108"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="row 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="onl-QE-cmA">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="row 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZu-pW-5jo">
+                                        <rect key="frame" x="0.0" y="42" width="382" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="row 3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6HS-mO-PSV">
+                                        <rect key="frame" x="0.0" y="84" width="382" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="BZu-sr-BiK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="5eM-Uk-BAb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kV4-jh-xgQ" secondAttribute="trailing" constant="16" id="94C-gH-bMB"/>
                             <constraint firstItem="BZu-sr-BiK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="9Re-t5-wOw"/>
+                            <constraint firstItem="kV4-jh-xgQ" firstAttribute="top" secondItem="BZu-sr-BiK" secondAttribute="bottom" constant="50" id="9Sb-Ko-kOS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BZu-sr-BiK" secondAttribute="trailing" constant="40" id="DA2-zh-eXT"/>
+                            <constraint firstItem="kV4-jh-xgQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="FmY-Np-8VW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5md-FB-qd2" secondAttribute="bottom" constant="25" id="KGl-ct-WST"/>
                             <constraint firstItem="5md-FB-qd2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zf8-1r-VjY"/>
                         </constraints>
@@ -72,6 +98,9 @@
                     <connections>
                         <outlet property="noButton" destination="cIG-DM-q7p" id="9IA-ll-a13"/>
                         <outlet property="questionLabel" destination="BZu-sr-BiK" id="v8J-WP-WZK"/>
+                        <outlet property="rowOneLabel" destination="onl-QE-cmA" id="wnP-r8-1ak"/>
+                        <outlet property="rowThreeLabel" destination="6HS-mO-PSV" id="QW7-c6-5Ou"/>
+                        <outlet property="rowTwoLabel" destination="sZu-pW-5jo" id="fhh-e5-BmE"/>
                         <outlet property="yesButton" destination="NUh-AL-l1J" id="eFQ-8e-LuT"/>
                     </connections>
                 </viewController>

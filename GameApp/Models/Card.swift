@@ -9,9 +9,10 @@ import Foundation
 
 class Card {
     var numbersOnCard: [Int] = []
-    var row1: [String] = []
-    var row2: [String] = []
-    var row3: [String] = []
+    
+    var row1: [(number: String, isCrossed: Bool)] = []
+    var row2: [(number: String, isCrossed: Bool)] = []
+    var row3: [(number: String, isCrossed: Bool)] = []
     
     func getNewCard() {
         row1 = generateRow(isLastRow: false)
@@ -19,10 +20,10 @@ class Card {
         row3 = generateRow(isLastRow: true)
     }
     
-    func generateRow(isLastRow: Bool) -> [String] {
+    func generateRow(isLastRow: Bool) -> [(String, Bool)] {
         var counter = 0
         var initialArray = Array(1...90)
-        var row = Array(repeating: "", count: 9)
+        var row = Array(repeating: ("", false), count: 9)
         
         while counter < 5 {
             let randomIndex = Int.random(in: 0..<initialArray.count)
@@ -32,17 +33,17 @@ class Card {
             if !numbersOnCard.contains(randomNumber) {
                 let index = randomNumber == 90 ? 8 : randomNumber / 10
                 
-                if row[index] == "" {
+                if row[index] == ("", false) {
                     
                     if isLastRow {
-                        if row1[index] != "" && row2[index] != "" {
+                        if row1[index] != ("", false) && row2[index] != ("", false) {
                             continue
                         }
                     }
                     
                     numbersOnCard.append(randomNumber)
                     numbersOnCard.sort()
-                    row[index] = randomNumber.formatted()
+                    row[index] = (randomNumber.formatted(), false)
                     counter += 1
                 }
                 
@@ -55,6 +56,9 @@ class Card {
     
     func showCard() {
         print(numbersOnCard)
+        print(row1)
+        print(row2)
+        print(row3)
     }
     
 }
