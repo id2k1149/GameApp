@@ -38,8 +38,6 @@ class MainViewController: UIViewController {
     
     var players: [Player] = Player.getPlayersList()
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -61,38 +59,28 @@ class MainViewController: UIViewController {
         yesButton.layer.cornerRadius = 10
         noButton.layer.cornerRadius = 10
         
-//        playGame()
-        
     }
     
     // MARK: - @IBActions
-    
-    
     @IBAction func yesButtontapped(_ sender: UIButton) {
     }
     
     @IBAction func noButtonTapped() {
+        let playerOne = players[0]
         let playerTwo = players[1]
-        print(playerTwo.name ?? "no name")
         
         let questionLabelToArray = questionLabel.text?.split(separator: " ")
         questionLabelToArray?.forEach {
             guard let number = Int($0) else {return}
-            print(number)
             playerTwo.checkCard(for: number)
-            
         }
         
-        
-        
-        
-        
-        
-        playerTwo.card.getCard()
         drawCPUCard(for: playerTwo)
+        if playerTwo.isWinner {
+            showAlert(with: "Game is over", and: "We have a winner!!!")
+        }
         questionLabel.text = getRandomNumber()
     }
-    
 }
 
 // MARK: - extension
@@ -109,28 +97,22 @@ extension MainViewController {
         player.card.getCard()
         
         for index in 0..<playerTwoRow1Collection.count {
-//            print(row1Collection[index].text ?? "no value")
             playerTwoRow1Collection[index].text = player.card.row1[index].number
             if player.card.row1[index].isCrossed {
-//                playerTwoRow1Collection[index].backgroundColor = .red
                 player2View1Collection[index].backgroundColor = .red
             }
         }
         
         for index in 0..<playerTwoRow2Collection.count {
-//            print(row2Collection[index].text ?? "no value")
             playerTwoRow2Collection[index].text = player.card.row2[index].number
             if player.card.row2[index].isCrossed {
-//                playerTwoRow2Collection[index].backgroundColor = .red
                 player2View2Collection[index].backgroundColor = .red
             }
         }
         
         for index in 0..<playerTwoRow3Collection.count {
-//            print(row3Collection[index].text ?? "no value")
             playerTwoRow3Collection[index].text = player.card.row3[index].number
             if player.card.row3[index].isCrossed {
-//                playerTwoRow3Collection[index].backgroundColor = .red
                 player2View3Collection[index].backgroundColor = .red
             }
         }
@@ -140,19 +122,26 @@ extension MainViewController {
         player.card.getCard()
         
         for index in 0..<playerOneRow1Collection.count {
-//            print(row1Collection[index].text ?? "no value")
             playerOneRow1Collection[index].text = player.card.row1[index].number
         }
         
         for index in 0..<playerOneRow2Collection.count {
-//            print(row2Collection[index].text ?? "no value")
             playerOneRow2Collection[index].text = player.card.row2[index].number
         }
         
         for index in 0..<playerOneRow3Collection.count {
-//            print(row3Collection[index].text ?? "no value")
             playerOneRow3Collection[index].text = player.card.row3[index].number
         }
     }
     
+}
+
+// MARK: - UIAlertController
+extension MainViewController {
+    private func showAlert(with title: String, and message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
 }
