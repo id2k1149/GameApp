@@ -13,6 +13,7 @@ class MainViewController: UIViewController {
     @IBOutlet var questionLabel: UILabel!
     
     @IBOutlet var playerNameLabel: UILabel!
+    @IBOutlet var playerTwoNameLabel: UILabel!
     
     @IBOutlet var cardView: UIView!
     
@@ -46,10 +47,18 @@ class MainViewController: UIViewController {
     @IBOutlet var label_3_8: UILabel!
     @IBOutlet var label_3_9: UILabel!
     
+    
+    @IBOutlet var row1Collection: [UILabel]!
+    @IBOutlet var row2Collection: [UILabel]!
+    @IBOutlet var row3Collection: [UILabel]!
+    
+    
     @IBOutlet var yesButton: UIButton!
     @IBOutlet var noButton: UIButton!
     
     var players: [Player] = Player.getPlayersList()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,10 +69,15 @@ class MainViewController: UIViewController {
         cardView.layer.cornerRadius = 10
         
         let playerOne = players[0]
+        print(playerOne.name ?? "no name")
         guard let playerOneName = playerOne.name else { return }
         playerNameLabel.text = "\(playerOneName) card:"
-        
         drawCard(for: playerOne)
+        
+        let playerTwo = players[1]
+        guard let playerTwoName = playerTwo.name else { return }
+        playerTwoNameLabel.text = "\(playerTwoName) card:"
+        drawCPUCard(for: playerTwo)
         
         yesButton.layer.cornerRadius = 10
         noButton.layer.cornerRadius = 10
@@ -92,6 +106,25 @@ extension MainViewController {
         return result != "Bag is empty"
         ? "Do you have \(result) in your card?"
         : result
+    }
+    
+    private func drawCPUCard(for player: Player) {
+        player.card.getCard()
+        
+        for index in 0..<row1Collection.count {
+//            print(row1Collection[index].text ?? "no value")
+            row1Collection[index].text = player.card.row1[index].number
+        }
+        
+        for index in 0..<row2Collection.count {
+//            print(row2Collection[index].text ?? "no value")
+            row2Collection[index].text = player.card.row2[index].number
+        }
+        
+        for index in 0..<row3Collection.count {
+//            print(row3Collection[index].text ?? "no value")
+            row3Collection[index].text = player.card.row3[index].number
+        }
     }
     
     private func drawCard(for player: Player) {
