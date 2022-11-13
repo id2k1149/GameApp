@@ -584,6 +584,7 @@
                         <outlet property="label_3_8" destination="UiE-50-RGm" id="8oX-Pt-7cf"/>
                         <outlet property="label_3_9" destination="dI2-GI-jfV" id="OkA-nS-aFx"/>
                         <outlet property="noButton" destination="cIG-DM-q7p" id="9IA-ll-a13"/>
+                        <outlet property="playerNameLabel" destination="Ph4-hF-948" id="Z6t-3W-kZn"/>
                         <outlet property="questionLabel" destination="BZu-sr-BiK" id="v8J-WP-WZK"/>
                         <outlet property="yesButton" destination="NUh-AL-l1J" id="eFQ-8e-LuT"/>
                     </connections>

@@ -15,7 +15,7 @@ class Player {
     init(isHumam: Bool = true) {
         self.isHuman = isHumam
         if isHumam {
-            name = "Your"
+            name = "My"
         } else {
             name = "Player #\(Int.random(in: 1...5))"
         }

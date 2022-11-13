@@ -35,12 +35,15 @@ class Card {
                 
                 if row[index] == ("", false) {
                     switch rowNumber {
-                    case "row 2":
-                        if counter < 3 && row1[index] != ("", false) {
-                            continue
-                        }
+//                    case "row 2":
+//                        if counter < 4 && row1[index] != ("", false) {
+//                            continue
+//                        }
                     case "row 3":
-                        if counter < 4 && row2[index] != ("", false) {
+//                        if counter < 4 && row2[index] != ("", false) {
+//                            continue
+//                        }
+                        if row1[index] != ("", false) && row2[index] != ("", false) {
                             continue
                         }
                         
