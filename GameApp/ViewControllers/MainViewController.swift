@@ -12,46 +12,18 @@ class MainViewController: UIViewController {
     // MARK: - @IBOutlets
     @IBOutlet var questionLabel: UILabel!
     
-    @IBOutlet var playerNameLabel: UILabel!
+    @IBOutlet var playerOneNameLabel: UILabel!
     @IBOutlet var playerTwoNameLabel: UILabel!
     
     @IBOutlet var cardView: UIView!
     
-    @IBOutlet var label_1_1: UILabel!
-    @IBOutlet var label_1_2: UILabel!
-    @IBOutlet var label_1_3: UILabel!
-    @IBOutlet var label_1_4: UILabel!
-    @IBOutlet var label_1_5: UILabel!
-    @IBOutlet var label_1_6: UILabel!
-    @IBOutlet var label_1_7: UILabel!
-    @IBOutlet var label_1_8: UILabel!
-    @IBOutlet var label_1_9: UILabel!
+    @IBOutlet var playerOneRow1Collection: [UILabel]!
+    @IBOutlet var playerOneRow2Collection: [UILabel]!
+    @IBOutlet var playerOneRow3Collection: [UILabel]!
     
-    @IBOutlet var label_2_1: UILabel!
-    @IBOutlet var label_2_2: UILabel!
-    @IBOutlet var label_2_3: UILabel!
-    @IBOutlet var label_2_4: UILabel!
-    @IBOutlet var label_2_5: UILabel!
-    @IBOutlet var label_2_6: UILabel!
-    @IBOutlet var label_2_7: UILabel!
-    @IBOutlet var label_2_8: UILabel!
-    @IBOutlet var label_2_9: UILabel!
-    
-    @IBOutlet var label_3_1: UILabel!
-    @IBOutlet var label_3_2: UILabel!
-    @IBOutlet var label_3_3: UILabel!
-    @IBOutlet var label_3_4: UILabel!
-    @IBOutlet var label_3_5: UILabel!
-    @IBOutlet var label_3_6: UILabel!
-    @IBOutlet var label_3_7: UILabel!
-    @IBOutlet var label_3_8: UILabel!
-    @IBOutlet var label_3_9: UILabel!
-    
-    
-    @IBOutlet var row1Collection: [UILabel]!
-    @IBOutlet var row2Collection: [UILabel]!
-    @IBOutlet var row3Collection: [UILabel]!
-    
+    @IBOutlet var playerTwoRow1Collection: [UILabel]!
+    @IBOutlet var playerTwoRow2Collection: [UILabel]!
+    @IBOutlet var playerTwoRow3Collection: [UILabel]!
     
     @IBOutlet var yesButton: UIButton!
     @IBOutlet var noButton: UIButton!
@@ -69,10 +41,9 @@ class MainViewController: UIViewController {
         cardView.layer.cornerRadius = 10
         
         let playerOne = players[0]
-        print(playerOne.name ?? "no name")
         guard let playerOneName = playerOne.name else { return }
-        playerNameLabel.text = "\(playerOneName) card:"
-        drawCard(for: playerOne)
+        playerOneNameLabel.text = "\(playerOneName) card:"
+        drawHumanCard(for: playerOne)
         
         let playerTwo = players[1]
         guard let playerTwoName = playerTwo.name else { return }
@@ -111,53 +82,45 @@ extension MainViewController {
     private func drawCPUCard(for player: Player) {
         player.card.getCard()
         
-        for index in 0..<row1Collection.count {
+        for index in 0..<playerTwoRow1Collection.count {
 //            print(row1Collection[index].text ?? "no value")
-            row1Collection[index].text = player.card.row1[index].number
+            playerTwoRow1Collection[index].text = player.card.row1[index].number
         }
         
-        for index in 0..<row2Collection.count {
+        for index in 0..<playerTwoRow2Collection.count {
 //            print(row2Collection[index].text ?? "no value")
-            row2Collection[index].text = player.card.row2[index].number
+            playerTwoRow2Collection[index].text = player.card.row2[index].number
         }
         
-        for index in 0..<row3Collection.count {
+        for index in 0..<playerTwoRow3Collection.count {
 //            print(row3Collection[index].text ?? "no value")
-            row3Collection[index].text = player.card.row3[index].number
+            playerTwoRow3Collection[index].text = player.card.row3[index].number
         }
     }
     
-    private func drawCard(for player: Player) {
-        label_1_1.text = player.card.row1[0].number
-        label_1_2.text = player.card.row1[1].number
-        label_1_3.text = player.card.row1[2].number
-        label_1_4.text = player.card.row1[3].number
-        label_1_5.text = player.card.row1[4].number
-        label_1_6.text = player.card.row1[5].number
-        label_1_7.text = player.card.row1[6].number
-        label_1_8.text = player.card.row1[7].number
-        label_1_9.text = player.card.row1[8].number
+    private func drawHumanCard(for player: Player) {
+        player.card.getCard()
         
-        label_2_1.text = player.card.row2[0].number
-        label_2_2.text = player.card.row2[1].number
-        label_2_3.text = player.card.row2[2].number
-        label_2_4.text = player.card.row2[3].number
-        label_2_5.text = player.card.row2[4].number
-        label_2_6.text = player.card.row2[5].number
-        label_2_7.text = player.card.row2[6].number
-        label_2_8.text = player.card.row2[7].number
-        label_2_9.text = player.card.row2[8].number
+        for index in 0..<playerOneRow1Collection.count {
+//            print(row1Collection[index].text ?? "no value")
+            playerOneRow1Collection[index].text = player.card.row1[index].number
+        }
         
-        label_3_1.text = player.card.row3[0].number
-        label_3_2.text = player.card.row3[1].number
-        label_3_3.text = player.card.row3[2].number
-        label_3_4.text = player.card.row3[3].number
-        label_3_5.text = player.card.row3[4].number
-        label_3_6.text = player.card.row3[5].number
-        label_3_7.text = player.card.row3[6].number
-        label_3_8.text = player.card.row3[7].number
-        label_3_9.text = player.card.row3[8].number
+        for index in 0..<playerOneRow2Collection.count {
+//            print(row2Collection[index].text ?? "no value")
+            playerOneRow2Collection[index].text = player.card.row2[index].number
+        }
+        
+        for index in 0..<playerOneRow3Collection.count {
+//            print(row3Collection[index].text ?? "no value")
+            playerOneRow3Collection[index].text = player.card.row3[index].number
+        }
     }
+    
+    
+        
+    
+    
     
     private func playGame() {
         let number = Int(questionLabel.text ?? "100")

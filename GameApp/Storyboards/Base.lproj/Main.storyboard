@@ -1042,65 +1042,65 @@
                     <navigationItem key="navigationItem" id="dhF-kV-H2w"/>
                     <connections>
                         <outlet property="cardView" destination="Cbk-ba-9v4" id="vfg-BE-y6C"/>
-                        <outlet property="label_1_1" destination="W4B-Nx-SPi" id="EUh-de-7Kr"/>
-                        <outlet property="label_1_2" destination="p7o-VD-9vV" id="pG7-Dp-j4g"/>
-                        <outlet property="label_1_3" destination="xW2-Sn-jlO" id="Wkg-tp-Qfd"/>
-                        <outlet property="label_1_4" destination="1AZ-Lh-o7s" id="BMm-I8-2Ex"/>
-                        <outlet property="label_1_5" destination="TUD-k3-lKP" id="jaa-Cw-tHG"/>
-                        <outlet property="label_1_6" destination="4zK-Zv-0xj" id="Jm1-ro-KdH"/>
-                        <outlet property="label_1_7" destination="tdX-WI-ft6" id="Z06-OV-gsy"/>
-                        <outlet property="label_1_8" destination="pMC-Y3-v3l" id="A11-5I-107"/>
-                        <outlet property="label_1_9" destination="Oxh-Ur-weI" id="4tB-Kg-Nyy"/>
-                        <outlet property="label_2_1" destination="8IZ-PY-1Xw" id="gru-Ji-yV7"/>
-                        <outlet property="label_2_2" destination="7s0-ZK-NXg" id="ldl-Gs-zk3"/>
-                        <outlet property="label_2_3" destination="eGM-eV-Tq9" id="clq-Ao-ecr"/>
-                        <outlet property="label_2_4" destination="ehV-Nl-aeX" id="Ktv-ec-1BR"/>
-                        <outlet property="label_2_5" destination="n12-ve-oPi" id="cX5-Ef-Qej"/>
-                        <outlet property="label_2_6" destination="qau-Na-j9g" id="Wdg-NG-SKY"/>
-                        <outlet property="label_2_7" destination="ciA-v4-DBC" id="Ij6-U2-zC9"/>
-                        <outlet property="label_2_8" destination="Xnk-Nf-qMs" id="7UB-Ra-SA9"/>
-                        <outlet property="label_2_9" destination="x8W-Q1-Tcn" id="bhS-1b-cg8"/>
-                        <outlet property="label_3_1" destination="A7l-Yl-nCX" id="6TJ-Hp-CYz"/>
-                        <outlet property="label_3_2" destination="ttQ-5T-bsD" id="dUk-ya-biG"/>
-                        <outlet property="label_3_3" destination="knb-PM-czK" id="LSa-Mu-n1v"/>
-                        <outlet property="label_3_4" destination="Dsn-hb-nNh" id="vgQ-vK-kug"/>
-                        <outlet property="label_3_5" destination="b6p-SP-axi" id="6pb-K3-85U"/>
-                        <outlet property="label_3_6" destination="FMc-sW-uBT" id="LQM-2Q-aim"/>
-                        <outlet property="label_3_7" destination="NQH-Wg-nM0" id="JVM-ZB-W0x"/>
-                        <outlet property="label_3_8" destination="UiE-50-RGm" id="8oX-Pt-7cf"/>
-                        <outlet property="label_3_9" destination="dI2-GI-jfV" id="OkA-nS-aFx"/>
                         <outlet property="noButton" destination="cIG-DM-q7p" id="9IA-ll-a13"/>
-                        <outlet property="playerNameLabel" destination="Ph4-hF-948" id="Z6t-3W-kZn"/>
-                        <outlet property="playerTwoNameLabel" destination="egx-UT-lCB" id="EVF-3h-CNx"/>
+                        <outlet property="playerOneNameLabel" destination="Ph4-hF-948" id="Z6t-3W-kZn"/>
+                        <outlet property="playerTwoNameLabel" destination="egx-UT-lCB" id="KBU-He-mTT"/>
                         <outlet property="questionLabel" destination="BZu-sr-BiK" id="v8J-WP-WZK"/>
                         <outlet property="yesButton" destination="NUh-AL-l1J" id="eFQ-8e-LuT"/>
-                        <outletCollection property="row1Collection" destination="e4n-G3-UXG" collectionClass="NSMutableArray" id="YSK-Yk-HJ4"/>
-                        <outletCollection property="row1Collection" destination="xM8-E8-Ir4" collectionClass="NSMutableArray" id="tGh-5L-nnw"/>
-                        <outletCollection property="row1Collection" destination="G60-hW-jkj" collectionClass="NSMutableArray" id="mkd-I5-oi8"/>
-                        <outletCollection property="row1Collection" destination="tcg-Wc-g4q" collectionClass="NSMutableArray" id="K0s-EW-FOu"/>
-                        <outletCollection property="row1Collection" destination="yNs-So-M4Q" collectionClass="NSMutableArray" id="8kp-LL-y6d"/>
-                        <outletCollection property="row1Collection" destination="Xyd-i1-zRb" collectionClass="NSMutableArray" id="kUE-Jp-AKY"/>
-                        <outletCollection property="row1Collection" destination="jOX-x5-AIW" collectionClass="NSMutableArray" id="o60-i2-8Am"/>
-                        <outletCollection property="row1Collection" destination="Eiu-5R-j19" collectionClass="NSMutableArray" id="JPH-Yv-47B"/>
-                        <outletCollection property="row1Collection" destination="6je-UO-4rR" collectionClass="NSMutableArray" id="uE4-Ec-MvV"/>
-                        <outletCollection property="row2Collection" destination="UBz-Jo-Hvi" collectionClass="NSMutableArray" id="wMx-a2-LSO"/>
-                        <outletCollection property="row2Collection" destination="xqg-c9-nHG" collectionClass="NSMutableArray" id="0YS-KT-PD8"/>
-                        <outletCollection property="row2Collection" destination="JGZ-uc-UAj" collectionClass="NSMutableArray" id="bjM-da-bLZ"/>
-                        <outletCollection property="row2Collection" destination="b4D-Zg-4ph" collectionClass="NSMutableArray" id="vKW-J1-x1h"/>
-                        <outletCollection property="row2Collection" destination="7az-lO-MFp" collectionClass="NSMutableArray" id="4im-1S-YSZ"/>
-                        <outletCollection property="row2Collection" destination="Svp-mn-eRC" collectionClass="NSMutableArray" id="Cxl-SD-hbD"/>
-                        <outletCollection property="row2Collection" destination="Kdf-li-YWv" collectionClass="NSMutableArray" id="lzK-tY-S4w"/>
-                        <outletCollection property="row2Collection" destination="Qn8-wV-Tej" collectionClass="NSMutableArray" id="8Nt-OO-CCb"/>
-                        <outletCollection property="row2Collection" destination="uOL-WY-cLy" collectionClass="NSMutableArray" id="8u6-KX-d3A"/>
-                        <outletCollection property="row3Collection" destination="IWs-XD-ya0" collectionClass="NSMutableArray" id="9ej-ce-K94"/>
-                        <outletCollection property="row3Collection" destination="sey-Nb-Sdb" collectionClass="NSMutableArray" id="M6f-UL-CvY"/>
-                        <outletCollection property="row3Collection" destination="HjX-xA-taT" collectionClass="NSMutableArray" id="yS1-JF-eaf"/>
-                        <outletCollection property="row3Collection" destination="Yr8-BG-RRe" collectionClass="NSMutableArray" id="s1T-g1-l5N"/>
-                        <outletCollection property="row3Collection" destination="L9b-32-74q" collectionClass="NSMutableArray" id="yQZ-QI-oWu"/>
-                        <outletCollection property="row3Collection" destination="zNf-kw-a2E" collectionClass="NSMutableArray" id="CQO-WV-7q0"/>
-                        <outletCollection property="row3Collection" destination="N54-W5-Pek" collectionClass="NSMutableArray" id="nWj-WF-ONQ"/>
-                        <outletCollection property="row3Collection" destination="IK0-Py-MEZ" collectionClass="NSMutableArray" id="DZE-4E-mGf"/>
-                        <outletCollection property="row3Collection" destination="JOc-0s-QGR" collectionClass="NSMutableArray" id="Nk2-PY-pXb"/>
+                        <outletCollection property="playerTwoRow1Collection" destination="e4n-G3-UXG" collectionClass="NSMutableArray" id="YSK-Yk-HJ4"/>
+                        <outletCollection property="playerTwoRow1Collection" destination="xM8-E8-Ir4" collectionClass="NSMutableArray" id="tGh-5L-nnw"/>
+                        <outletCollection property="playerTwoRow1Collection" destination="G60-hW-jkj" collectionClass="NSMutableArray" id="mkd-I5-oi8"/>
+                        <outletCollection property="playerTwoRow1Collection" destination="tcg-Wc-g4q" collectionClass="NSMutableArray" id="K0s-EW-FOu"/>
+                        <outletCollection property="playerTwoRow1Collection" destination="yNs-So-M4Q" collectionClass="NSMutableArray" id="8kp-LL-y6d"/>
+                        <outletCollection property="playerTwoRow1Collection" destination="Xyd-i1-zRb" collectionClass="NSMutableArray" id="kUE-Jp-AKY"/>
+                        <outletCollection property="playerTwoRow1Collection" destination="jOX-x5-AIW" collectionClass="NSMutableArray" id="o60-i2-8Am"/>
+                        <outletCollection property="playerTwoRow1Collection" destination="Eiu-5R-j19" collectionClass="NSMutableArray" id="JPH-Yv-47B"/>
+                        <outletCollection property="playerTwoRow1Collection" destination="6je-UO-4rR" collectionClass="NSMutableArray" id="uE4-Ec-MvV"/>
+                        <outletCollection property="playerTwoRow2Collection" destination="UBz-Jo-Hvi" collectionClass="NSMutableArray" id="wMx-a2-LSO"/>
+                        <outletCollection property="playerTwoRow2Collection" destination="xqg-c9-nHG" collectionClass="NSMutableArray" id="0YS-KT-PD8"/>
+                        <outletCollection property="playerTwoRow2Collection" destination="JGZ-uc-UAj" collectionClass="NSMutableArray" id="bjM-da-bLZ"/>
+                        <outletCollection property="playerTwoRow2Collection" destination="b4D-Zg-4ph" collectionClass="NSMutableArray" id="vKW-J1-x1h"/>
+                        <outletCollection property="playerTwoRow2Collection" destination="7az-lO-MFp" collectionClass="NSMutableArray" id="4im-1S-YSZ"/>
+                        <outletCollection property="playerTwoRow2Collection" destination="Svp-mn-eRC" collectionClass="NSMutableArray" id="Cxl-SD-hbD"/>
+                        <outletCollection property="playerTwoRow2Collection" destination="Kdf-li-YWv" collectionClass="NSMutableArray" id="lzK-tY-S4w"/>
+                        <outletCollection property="playerTwoRow2Collection" destination="Qn8-wV-Tej" collectionClass="NSMutableArray" id="8Nt-OO-CCb"/>
+                        <outletCollection property="playerTwoRow2Collection" destination="uOL-WY-cLy" collectionClass="NSMutableArray" id="8u6-KX-d3A"/>
+                        <outletCollection property="playerTwoRow3Collection" destination="IWs-XD-ya0" collectionClass="NSMutableArray" id="ks5-pM-e14"/>
+                        <outletCollection property="playerTwoRow3Collection" destination="sey-Nb-Sdb" collectionClass="NSMutableArray" id="jZW-TE-ZxD"/>
+                        <outletCollection property="playerTwoRow3Collection" destination="HjX-xA-taT" collectionClass="NSMutableArray" id="MId-LC-PQu"/>
+                        <outletCollection property="playerTwoRow3Collection" destination="Yr8-BG-RRe" collectionClass="NSMutableArray" id="4dB-0X-Tc1"/>
+                        <outletCollection property="playerTwoRow3Collection" destination="L9b-32-74q" collectionClass="NSMutableArray" id="c68-qy-NNj"/>
+                        <outletCollection property="playerTwoRow3Collection" destination="zNf-kw-a2E" collectionClass="NSMutableArray" id="wL1-6d-Gys"/>
+                        <outletCollection property="playerTwoRow3Collection" destination="N54-W5-Pek" collectionClass="NSMutableArray" id="ahd-dn-lq0"/>
+                        <outletCollection property="playerTwoRow3Collection" destination="IK0-Py-MEZ" collectionClass="NSMutableArray" id="XOg-ZN-3iN"/>
+                        <outletCollection property="playerTwoRow3Collection" destination="JOc-0s-QGR" collectionClass="NSMutableArray" id="ET2-7T-24t"/>
+                        <outletCollection property="playerOneRow1Collection" destination="W4B-Nx-SPi" collectionClass="NSMutableArray" id="WmA-LS-RWg"/>
+                        <outletCollection property="playerOneRow1Collection" destination="p7o-VD-9vV" collectionClass="NSMutableArray" id="iFu-Hg-fY9"/>
+                        <outletCollection property="playerOneRow1Collection" destination="xW2-Sn-jlO" collectionClass="NSMutableArray" id="Qc3-Xf-kUS"/>
+                        <outletCollection property="playerOneRow1Collection" destination="1AZ-Lh-o7s" collectionClass="NSMutableArray" id="uzh-ZH-qRQ"/>
+                        <outletCollection property="playerOneRow1Collection" destination="TUD-k3-lKP" collectionClass="NSMutableArray" id="Yn3-dp-qBX"/>
+                        <outletCollection property="playerOneRow1Collection" destination="4zK-Zv-0xj" collectionClass="NSMutableArray" id="2EN-84-sr4"/>
+                        <outletCollection property="playerOneRow1Collection" destination="tdX-WI-ft6" collectionClass="NSMutableArray" id="J68-hZ-r2p"/>
+                        <outletCollection property="playerOneRow1Collection" destination="pMC-Y3-v3l" collectionClass="NSMutableArray" id="fWB-kP-R4w"/>
+                        <outletCollection property="playerOneRow1Collection" destination="Oxh-Ur-weI" collectionClass="NSMutableArray" id="Kyg-hH-EVG"/>
+                        <outletCollection property="playerOneRow2Collection" destination="8IZ-PY-1Xw" collectionClass="NSMutableArray" id="KVz-1y-hDp"/>
+                        <outletCollection property="playerOneRow2Collection" destination="7s0-ZK-NXg" collectionClass="NSMutableArray" id="l3b-Bi-F9E"/>
+                        <outletCollection property="playerOneRow2Collection" destination="eGM-eV-Tq9" collectionClass="NSMutableArray" id="WfI-aN-7Pp"/>
+                        <outletCollection property="playerOneRow2Collection" destination="ehV-Nl-aeX" collectionClass="NSMutableArray" id="x73-4t-XB2"/>
+                        <outletCollection property="playerOneRow2Collection" destination="n12-ve-oPi" collectionClass="NSMutableArray" id="9lb-tw-gnF"/>
+                        <outletCollection property="playerOneRow2Collection" destination="qau-Na-j9g" collectionClass="NSMutableArray" id="AU7-OB-a1M"/>
+                        <outletCollection property="playerOneRow2Collection" destination="ciA-v4-DBC" collectionClass="NSMutableArray" id="PTM-OQ-kyw"/>
+                        <outletCollection property="playerOneRow2Collection" destination="Xnk-Nf-qMs" collectionClass="NSMutableArray" id="1KP-fg-Wg5"/>
+                        <outletCollection property="playerOneRow2Collection" destination="x8W-Q1-Tcn" collectionClass="NSMutableArray" id="LaJ-tn-YNt"/>
+                        <outletCollection property="playerOneRow3Collection" destination="A7l-Yl-nCX" collectionClass="NSMutableArray" id="WqK-Da-BwD"/>
+                        <outletCollection property="playerOneRow3Collection" destination="ttQ-5T-bsD" collectionClass="NSMutableArray" id="pgb-ox-pXe"/>
+                        <outletCollection property="playerOneRow3Collection" destination="knb-PM-czK" collectionClass="NSMutableArray" id="wwK-WS-M4w"/>
+                        <outletCollection property="playerOneRow3Collection" destination="Dsn-hb-nNh" collectionClass="NSMutableArray" id="4w3-qE-R33"/>
+                        <outletCollection property="playerOneRow3Collection" destination="b6p-SP-axi" collectionClass="NSMutableArray" id="vp8-e0-4Ww"/>
+                        <outletCollection property="playerOneRow3Collection" destination="FMc-sW-uBT" collectionClass="NSMutableArray" id="zjw-4b-yee"/>
+                        <outletCollection property="playerOneRow3Collection" destination="NQH-Wg-nM0" collectionClass="NSMutableArray" id="Czq-FJ-Dpe"/>
+                        <outletCollection property="playerOneRow3Collection" destination="UiE-50-RGm" collectionClass="NSMutableArray" id="QR4-jB-8AZ"/>
+                        <outletCollection property="playerOneRow3Collection" destination="dI2-GI-jfV" collectionClass="NSMutableArray" id="oES-lR-kBP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
