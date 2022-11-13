@@ -506,41 +506,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="5md-FB-qd2" userLabel="Buttons Stack View">
-                                <rect key="frame" x="16" y="507" width="288" height="36"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUh-AL-l1J">
-                                        <rect key="frame" x="0.0" y="0.0" width="123.5" height="36"/>
-                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="qxl-Cz-3Ma"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="YES">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="yesButtontapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wYm-vS-K4b"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIG-DM-q7p">
-                                        <rect key="frame" x="164.5" y="0.0" width="123.5" height="36"/>
-                                        <color key="backgroundColor" red="1" green="0.0" blue="0.01666666667" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="quU-b0-guP"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="NO">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="noButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="0LP-4W-dGy"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gSO-3d-Z8Q" userLabel="CPU Card View">
                                 <rect key="frame" x="16" y="317" width="288" height="99"/>
                                 <subviews>
@@ -1012,6 +977,41 @@
                                     <constraint firstItem="cNg-UT-Nkp" firstAttribute="top" secondItem="gSO-3d-Z8Q" secondAttribute="top" constant="3" id="tmp-5x-haO"/>
                                 </constraints>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="5md-FB-qd2" userLabel="Buttons Stack View">
+                                <rect key="frame" x="16" y="507" width="288" height="36"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUh-AL-l1J">
+                                        <rect key="frame" x="0.0" y="0.0" width="123.5" height="36"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="qxl-Cz-3Ma"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="YES">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="yesButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="VPY-Lo-3Jd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIG-DM-q7p">
+                                        <rect key="frame" x="164.5" y="0.0" width="123.5" height="36"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.01666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="quU-b0-guP"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="NO">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="noButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="0LP-4W-dGy"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1039,9 +1039,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="dhF-kV-H2w"/>
                     <connections>
-                        <outlet property="cardView" destination="Cbk-ba-9v4" id="vfg-BE-y6C"/>
                         <outlet property="noButton" destination="cIG-DM-q7p" id="9IA-ll-a13"/>
+                        <outlet property="playerOneCardView" destination="Cbk-ba-9v4" id="vfg-BE-y6C"/>
                         <outlet property="playerOneNameLabel" destination="Ph4-hF-948" id="Z6t-3W-kZn"/>
+                        <outlet property="playerTwoCardView" destination="gSO-3d-Z8Q" id="ScV-ef-C7I"/>
                         <outlet property="playerTwoNameLabel" destination="egx-UT-lCB" id="KBU-He-mTT"/>
                         <outlet property="questionLabel" destination="BZu-sr-BiK" id="v8J-WP-WZK"/>
                         <outlet property="yesButton" destination="NUh-AL-l1J" id="eFQ-8e-LuT"/>

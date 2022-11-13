@@ -15,7 +15,8 @@ class MainViewController: UIViewController {
     @IBOutlet var playerOneNameLabel: UILabel!
     @IBOutlet var playerTwoNameLabel: UILabel!
     
-    @IBOutlet var cardView: UIView!
+    @IBOutlet var playerOneCardView: UIView!
+    @IBOutlet var playerTwoCardView: UIView!
     
     @IBOutlet var player1View1Collection: [UIView]!
     @IBOutlet var player1View2Collection: [UIView]!
@@ -43,8 +44,11 @@ class MainViewController: UIViewController {
         
         questionLabel.text = getRandomNumber()
         
-        cardView.layer.borderWidth = 3
-        cardView.layer.cornerRadius = 10
+        playerOneCardView.layer.borderWidth = 3
+        playerOneCardView.layer.cornerRadius = 10
+        
+        playerTwoCardView.layer.borderWidth = 3
+        playerTwoCardView.layer.cornerRadius = 10
         
         let playerOne = players[0]
         guard let playerOneName = playerOne.name else { return }
@@ -62,7 +66,27 @@ class MainViewController: UIViewController {
     }
     
     // MARK: - @IBActions
-    @IBAction func yesButtontapped(_ sender: UIButton) {
+    
+    @IBAction func yesButtonTapped() {
+        
+            let playerOne = players[0]
+            let playerTwo = players[1]
+        
+            let questionLabelToArray = questionLabel.text?.split(separator: " ")
+            questionLabelToArray?.forEach {
+                guard let number = Int($0) else {return}
+                playerOne.checkCard(for: number)
+                playerTwo.checkCard(for: number)
+            }
+        
+            drawHumanCard(for: playerOne)
+            drawCPUCard(for: playerTwo)
+        
+            if playerTwo.isWinner || playerOne.isWinner{
+                showAlert(with: "Game is over", and: "We have a winner!!!")
+            }
+        
+            questionLabel.text = getRandomNumber()
     }
     
     @IBAction func noButtonTapped() {
@@ -123,14 +147,23 @@ extension MainViewController {
         
         for index in 0..<playerOneRow1Collection.count {
             playerOneRow1Collection[index].text = player.card.row1[index].number
+            if player.card.row1[index].isCrossed {
+                player1View1Collection[index].backgroundColor = .green
+            }
         }
         
         for index in 0..<playerOneRow2Collection.count {
             playerOneRow2Collection[index].text = player.card.row2[index].number
+            if player.card.row2[index].isCrossed {
+                player1View2Collection[index].backgroundColor = .green
+            }
         }
         
         for index in 0..<playerOneRow3Collection.count {
             playerOneRow3Collection[index].text = player.card.row3[index].number
+            if player.card.row3[index].isCrossed {
+                player1View3Collection[index].backgroundColor = .green
+            }
         }
     }
     
