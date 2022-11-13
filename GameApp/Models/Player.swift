@@ -68,10 +68,6 @@ extension Player {
             }
         }
         
-        players.forEach {
-            print($0.name ?? "no name", $0.isHuman)
-        }
-        
         return players
     }
 }

@@ -66,7 +66,6 @@ class MainViewController: UIViewController {
     }
     
     // MARK: - @IBActions
-    
     @IBAction func yesButtonTapped() {
         
             let playerOne = players[0]
@@ -118,7 +117,6 @@ extension MainViewController {
     }
     
     private func drawCPUCard(for player: Player) {
-        player.card.getCard()
         
         for index in 0..<playerTwoRow1Collection.count {
             playerTwoRow1Collection[index].text = player.card.row1[index].number
@@ -143,7 +141,6 @@ extension MainViewController {
     }
     
     private func drawHumanCard(for player: Player) {
-        player.card.getCard()
         
         for index in 0..<playerOneRow1Collection.count {
             playerOneRow1Collection[index].text = player.card.row1[index].number

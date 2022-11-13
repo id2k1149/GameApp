@@ -64,12 +64,12 @@ class Card {
         return row
     }
     
-    func getCard() {
-        print(numbersOnCard)
-        print(getRow(row1))
-        print(getRow(row2))
-        print(getRow(row3))
-    }
+//    func getCard() {
+//        print(numbersOnCard)
+//        print(getRow(row1))
+//        print(getRow(row2))
+//        print(getRow(row3))
+//    }
     
     private func getRow(_ row: [(number: String, isCrossed: Bool)]) -> String {
         var result = ""
