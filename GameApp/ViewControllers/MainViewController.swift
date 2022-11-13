@@ -49,7 +49,7 @@ class MainViewController: UIViewController {
     @IBOutlet var yesButton: UIButton!
     @IBOutlet var noButton: UIButton!
     
-    var players: [Player] = []
+    var players: [Player] = Player.getPlayersList()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,11 +59,11 @@ class MainViewController: UIViewController {
         cardView.layer.borderWidth = 3
         cardView.layer.cornerRadius = 10
         
-//        let playerOne = players[0]
-//        guard let playerOneName = playerOne.name else { return }
-//        playerNameLabel.text = "\(playerOneName) card:"
+        let playerOne = players[0]
+        guard let playerOneName = playerOne.name else { return }
+        playerNameLabel.text = "\(playerOneName) card:"
         
-//        drawCard(for: playerOne)
+        drawCard(for: playerOne)
         
         yesButton.layer.cornerRadius = 10
         noButton.layer.cornerRadius = 10

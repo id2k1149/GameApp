@@ -17,7 +17,7 @@ class Player {
         if isHumam {
             name = "My"
         } else {
-            name = "Player #\(Int.random(in: 1...5))"
+            name = "CPU Player"
         }
     }
     
