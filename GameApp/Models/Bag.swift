@@ -8,7 +8,7 @@
 class Bag {
     static let shared = Bag()
     
-    var barrels = Array(1...5)
+    var barrels = Array(1...90)
     
     private init() {}
     

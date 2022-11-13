@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5011371A292088E400C79AE9 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50113719292088E400C79AE9 /* StartViewController.swift */; };
 		507D9ED5291EF218002D80B9 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507D9ED4291EF218002D80B9 /* Card.swift */; };
 		50B1B112291EB2EF00C70BCF /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B1B111291EB2EF00C70BCF /* Player.swift */; };
 		50B1B115291EC16100C70BCF /* Bag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B1B114291EC16100C70BCF /* Bag.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		50113719292088E400C79AE9 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		507D9ED4291EF218002D80B9 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		50B1B111291EB2EF00C70BCF /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		50B1B114291EC16100C70BCF /* Bag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bag.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 		50B1B110291EB28000C70BCF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				50113719292088E400C79AE9 /* StartViewController.swift */,
 				50E906F1291EB0E30041F4B6 /* MainViewController.swift */,
 			);
 			path = ViewControllers;
@@ -180,6 +183,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50B1B115291EC16100C70BCF /* Bag.swift in Sources */,
+				5011371A292088E400C79AE9 /* StartViewController.swift in Sources */,
 				507D9ED5291EF218002D80B9 /* Card.swift in Sources */,
 				50B1B112291EB2EF00C70BCF /* Player.swift in Sources */,
 				50E906F2291EB0E30041F4B6 /* MainViewController.swift in Sources */,

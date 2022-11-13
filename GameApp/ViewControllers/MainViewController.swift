@@ -49,6 +49,8 @@ class MainViewController: UIViewController {
     @IBOutlet var yesButton: UIButton!
     @IBOutlet var noButton: UIButton!
     
+    var players: [Player] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -57,11 +59,11 @@ class MainViewController: UIViewController {
         cardView.layer.borderWidth = 3
         cardView.layer.cornerRadius = 10
         
-        let playerOne = Player(isHumam: true)
-        guard let playerOneName = playerOne.name else { return }
-        playerNameLabel.text = "\(playerOneName) card:"
+//        let playerOne = players[0]
+//        guard let playerOneName = playerOne.name else { return }
+//        playerNameLabel.text = "\(playerOneName) card:"
         
-        drawCard(for: playerOne)
+//        drawCard(for: playerOne)
         
         yesButton.layer.cornerRadius = 10
         noButton.layer.cornerRadius = 10
@@ -71,8 +73,11 @@ class MainViewController: UIViewController {
     }
     
     // MARK: - @IBActions
-    @IBAction func yesButtonTapped() {
+    
+    
+    @IBAction func yesButtontapped(_ sender: UIButton) {
     }
+    
     @IBAction func noButtonTapped() {
         questionLabel.text = getRandomNumber()
     }

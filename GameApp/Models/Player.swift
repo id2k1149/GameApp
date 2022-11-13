@@ -38,3 +38,22 @@ class Player {
         }
     }
 }
+
+extension Player {
+    static func getPlayersList() -> [Player] {
+        var players: [Player] = []
+        
+        for count in 0...2 {
+            switch count {
+            case 0:
+                let player = Player(isHumam: true)
+                players.append(player)
+            default:
+                let player = Player(isHumam: false)
+                players.append(player)
+            }
+        }
+        
+        return players
+    }
+}
