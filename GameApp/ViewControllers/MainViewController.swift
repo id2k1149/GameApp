@@ -17,9 +17,17 @@ class MainViewController: UIViewController {
     
     @IBOutlet var cardView: UIView!
     
+    @IBOutlet var player1View1Collection: [UIView]!
+    @IBOutlet var player1View2Collection: [UIView]!
+    @IBOutlet var player1View3Collection: [UIView]!
+    
     @IBOutlet var playerOneRow1Collection: [UILabel]!
     @IBOutlet var playerOneRow2Collection: [UILabel]!
     @IBOutlet var playerOneRow3Collection: [UILabel]!
+    
+    @IBOutlet var player2View1Collection: [UIView]!
+    @IBOutlet var player2View2Collection: [UIView]!
+    @IBOutlet var player2View3Collection: [UIView]!
     
     @IBOutlet var playerTwoRow1Collection: [UILabel]!
     @IBOutlet var playerTwoRow2Collection: [UILabel]!
@@ -104,7 +112,8 @@ extension MainViewController {
 //            print(row1Collection[index].text ?? "no value")
             playerTwoRow1Collection[index].text = player.card.row1[index].number
             if player.card.row1[index].isCrossed {
-                playerTwoRow1Collection[index].backgroundColor = .red
+//                playerTwoRow1Collection[index].backgroundColor = .red
+                player2View1Collection[index].backgroundColor = .red
             }
         }
         
@@ -112,7 +121,8 @@ extension MainViewController {
 //            print(row2Collection[index].text ?? "no value")
             playerTwoRow2Collection[index].text = player.card.row2[index].number
             if player.card.row2[index].isCrossed {
-                playerTwoRow2Collection[index].backgroundColor = .red
+//                playerTwoRow2Collection[index].backgroundColor = .red
+                player2View2Collection[index].backgroundColor = .red
             }
         }
         
@@ -120,7 +130,8 @@ extension MainViewController {
 //            print(row3Collection[index].text ?? "no value")
             playerTwoRow3Collection[index].text = player.card.row3[index].number
             if player.card.row3[index].isCrossed {
-                playerTwoRow3Collection[index].backgroundColor = .red
+//                playerTwoRow3Collection[index].backgroundColor = .red
+                player2View3Collection[index].backgroundColor = .red
             }
         }
     }
