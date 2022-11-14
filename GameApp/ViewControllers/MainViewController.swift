@@ -67,42 +67,12 @@ class MainViewController: UIViewController {
     
     // MARK: - @IBActions
     @IBAction func yesButtonTapped() {
-        
-            let playerOne = players[0]
-            let playerTwo = players[1]
-        
-            let questionLabelToArray = questionLabel.text?.split(separator: " ")
-            questionLabelToArray?.forEach {
-                guard let number = Int($0) else {return}
-                playerOne.checkCard(for: number)
-                playerTwo.checkCard(for: number)
-            }
-        
-            drawHumanCard(for: playerOne)
-            drawCPUCard(for: playerTwo)
-        
-            if playerTwo.isWinner || playerOne.isWinner{
-                showAlert(with: "Game is over", and: "We have a winner!!!")
-            }
-        
-            questionLabel.text = getRandomNumber()
+        tapButton(isYesButton: true)
+        drawHumanCard(for: players[0])
     }
     
     @IBAction func noButtonTapped() {
-        let playerOne = players[0]
-        let playerTwo = players[1]
-        
-        let questionLabelToArray = questionLabel.text?.split(separator: " ")
-        questionLabelToArray?.forEach {
-            guard let number = Int($0) else {return}
-            playerTwo.checkCard(for: number)
-        }
-        
-        drawCPUCard(for: playerTwo)
-        if playerTwo.isWinner {
-            showAlert(with: "Game is over", and: "We have a winner!!!")
-        }
-        questionLabel.text = getRandomNumber()
+        tapButton(isYesButton: false)
     }
 }
 
@@ -164,14 +134,38 @@ extension MainViewController {
         }
     }
     
-}
-
-// MARK: - UIAlertController
-extension MainViewController {
+    private func tapButton(isYesButton: Bool) {
+        let playerOne = players[0]
+        let playerTwo = players[1]
+    
+        let questionLabelToArray = questionLabel.text?.split(separator: " ")
+        
+        questionLabelToArray?.forEach {
+            guard let number = Int($0) else {return}
+            
+            if isYesButton {
+                playerOne.checkCard(for: number)
+            }
+            
+            playerTwo.checkCard(for: number)
+        }
+    
+        drawCPUCard(for: playerTwo)
+    
+        if playerTwo.isWinner || playerOne.isWinner{
+            showAlert(with: "Game is over", and: "We have a winner!!!")
+        }
+    
+        questionLabel.text = getRandomNumber()
+        
+    }
+    
+    // MARK: - UIAlertController
     private func showAlert(with title: String, and message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default)
         alert.addAction(okAction)
         present(alert, animated: true)
     }
+    
 }

@@ -35,18 +35,14 @@ class Card {
                 
                 if row[index] == ("", false) {
                     switch rowNumber {
-//                    case "row 2":
-//                        if counter < 4 && row1[index] != ("", false) {
-//                            continue
-//                        }
+                    case "row 2":
+                        if counter < 4 && row1[index] != ("", false) {
+                            continue
+                        }
                     case "row 3":
-//                        if counter < 4 && row2[index] != ("", false) {
-//                            continue
-//                        }
                         if row1[index] != ("", false) && row2[index] != ("", false) {
                             continue
                         }
-                        
                     default:
                         break
                     }
@@ -56,27 +52,10 @@ class Card {
                     row[index] = (randomNumber.formatted(), false)
                     counter += 1
                 }
-                
             } else {
                 continue
             }
         }
         return row
     }
-    
-//    func getCard() {
-//        print(numbersOnCard)
-//        print(getRow(row1))
-//        print(getRow(row2))
-//        print(getRow(row3))
-//    }
-    
-    private func getRow(_ row: [(number: String, isCrossed: Bool)]) -> String {
-        var result = ""
-        row.forEach {
-            result += $0.number + " "
-        }
-        return result
-    }
-    
 }

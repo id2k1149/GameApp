@@ -12,6 +12,7 @@ class Player {
     let isHuman: Bool
     var isWinner: Bool = false
     var card = Card()
+    var bingo = 0
     
     init(isHumam: Bool = true) {
         self.isHuman = isHumam
@@ -22,35 +23,6 @@ class Player {
         }
     }
     
-    func checkCard(for number: Int) {
-        if card.numbersOnCard.contains(number) {
-            guard let index = card.numbersOnCard.firstIndex(of: number) else { return }
-            card.numbersOnCard.remove(at: index)
-            
-            let bingo1 = checkRow(in: &card.row1, for: number)
-            let bingo2 = checkRow(in: &card.row2, for: number)
-            let bingo3 = checkRow(in: &card.row3, for: number)
-            
-            if bingo1 + bingo2 + bingo3 == 15 {
-                isWinner = true
-            }
-        }
-    }
-    
-    private func checkRow(in row: inout[(number: String, isCrossed: Bool)], for number: Int) -> Int {
-        if let index = row.firstIndex(where: { $0.number == number.formatted() }) {
-            row[index].isCrossed = true
-        }
-        
-        var bingo = 0
-        row.forEach {
-            if $0.isCrossed {
-                bingo += 1
-            }
-        }
-        
-        return bingo
-    }
 }
 
 extension Player {
@@ -67,7 +39,48 @@ extension Player {
                 players.append(player)
             }
         }
-        
+    
         return players
+    }
+    
+    func checkCard(for number: Int) {
+        if card.numbersOnCard.contains(number) {
+            guard let index = card.numbersOnCard.firstIndex(of: number) else { return }
+            card.numbersOnCard.remove(at: index)
+            
+            let numberCrossed1 = checkRow(in: &card.row1, for: number)
+            if numberCrossed1 == 5 {
+                bingo += numberCrossed1
+            }
+            
+            let numberCrossed2 = checkRow(in: &card.row2, for: number)
+            if numberCrossed2 == 5 {
+                bingo += numberCrossed2
+            }
+            
+            let numberCrossed3 = checkRow(in: &card.row3, for: number)
+            if numberCrossed3 == 5 {
+                bingo += numberCrossed3
+            }
+            
+            if bingo == 15 {
+                isWinner = true
+            }
+        }
+    }
+    
+    private func checkRow(in row: inout[(number: String, isCrossed: Bool)], for number: Int) -> Int {
+        if let index = row.firstIndex(where: { $0.number == number.formatted() }) {
+            row[index].isCrossed = true
+        }
+        
+        var numberCrossed = 0
+        row.forEach {
+            if $0.isCrossed {
+                numberCrossed += 1
+            }
+        }
+        
+        return numberCrossed
     }
 }
