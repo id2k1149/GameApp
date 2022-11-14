@@ -50,15 +50,11 @@ class MainViewController: UIViewController {
         playerTwoCardView.layer.borderWidth = 3
         playerTwoCardView.layer.cornerRadius = 10
         
-        let playerOne = players[0]
-        guard let playerOneName = playerOne.name else { return }
-        playerOneNameLabel.text = "\(playerOneName) card:"
-        drawHumanCard(for: playerOne)
+        playerOneNameLabel.text = "\(players[0].name ?? "N/A") card:"
+        drawHumanCard(for: players[0])
         
-        let playerTwo = players[1]
-        guard let playerTwoName = playerTwo.name else { return }
-        playerTwoNameLabel.text = "\(playerTwoName) card:"
-        drawCPUCard(for: playerTwo)
+        playerTwoNameLabel.text = "\(players[1].name ?? "N/A") card:"
+        drawCPUCard(for: players[1])
         
         yesButton.layer.cornerRadius = 10
         noButton.layer.cornerRadius = 10
@@ -88,48 +84,54 @@ extension MainViewController {
     
     private func drawCPUCard(for player: Player) {
         
-        for index in 0..<playerTwoRow1Collection.count {
-            playerTwoRow1Collection[index].text = player.card.row1[index].number
-            if player.card.row1[index].isCrossed {
-                player2View1Collection[index].backgroundColor = .red
-            }
-        }
+        drawRow(player: players[1],
+                collectionLabel: playerTwoRow1Collection,
+                collectionView: player2View1Collection,
+                row: players[1].card.row1)
         
-        for index in 0..<playerTwoRow2Collection.count {
-            playerTwoRow2Collection[index].text = player.card.row2[index].number
-            if player.card.row2[index].isCrossed {
-                player2View2Collection[index].backgroundColor = .red
-            }
-        }
+        drawRow(player: players[1],
+                collectionLabel: playerTwoRow2Collection,
+                collectionView: player2View2Collection,
+                row: players[1].card.row2)
         
-        for index in 0..<playerTwoRow3Collection.count {
-            playerTwoRow3Collection[index].text = player.card.row3[index].number
-            if player.card.row3[index].isCrossed {
-                player2View3Collection[index].backgroundColor = .red
-            }
-        }
+        drawRow(player: players[1],
+                collectionLabel: playerTwoRow3Collection,
+                collectionView: player2View3Collection,
+                row: players[1].card.row3)
     }
     
     private func drawHumanCard(for player: Player) {
         
-        for index in 0..<playerOneRow1Collection.count {
-            playerOneRow1Collection[index].text = player.card.row1[index].number
-            if player.card.row1[index].isCrossed {
-                player1View1Collection[index].backgroundColor = .green
-            }
-        }
+        drawRow(player: players[0],
+                collectionLabel: playerOneRow1Collection,
+                collectionView: player1View1Collection,
+                row: players[0].card.row1)
         
-        for index in 0..<playerOneRow2Collection.count {
-            playerOneRow2Collection[index].text = player.card.row2[index].number
-            if player.card.row2[index].isCrossed {
-                player1View2Collection[index].backgroundColor = .green
-            }
-        }
+        drawRow(player: players[0],
+                collectionLabel: playerOneRow2Collection,
+                collectionView: player1View2Collection,
+                row: players[0].card.row2)
         
-        for index in 0..<playerOneRow3Collection.count {
-            playerOneRow3Collection[index].text = player.card.row3[index].number
-            if player.card.row3[index].isCrossed {
-                player1View3Collection[index].backgroundColor = .green
+        drawRow(player: players[0],
+                collectionLabel: playerOneRow3Collection,
+                collectionView: player1View3Collection,
+                row: players[0].card.row3)
+        
+    }
+    
+    private func drawRow(player: Player,
+                         collectionLabel: [UILabel],
+                         collectionView: [UIView],
+                         row: [(number: String, isCrossed: Bool)] ) {
+        
+        for index in 0..<collectionLabel.count {
+            collectionLabel[index].text = row[index].number
+            if row[index].isCrossed {
+                if player.isHuman {
+                    collectionView[index].backgroundColor = .green
+                } else {
+                    collectionView[index].backgroundColor = .red
+                }
             }
         }
     }
