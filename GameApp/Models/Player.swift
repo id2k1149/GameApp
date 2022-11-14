@@ -12,7 +12,7 @@ class Player {
     let isHuman: Bool
     var isWinner: Bool = false
     var card = Card()
-    var bingo = 0
+    var mistake = 0
     
     init(isHumam: Bool = true) {
         self.isHuman = isHumam
@@ -48,28 +48,13 @@ extension Player {
             guard let index = card.numbersOnCard.firstIndex(of: number) else { return }
             card.numbersOnCard.remove(at: index)
             
-            let numberCrossed1 = checkRow(in: &card.row1, for: number)
-            if numberCrossed1 == 5 {
-                bingo += numberCrossed1
-            }
-            
-            let numberCrossed2 = checkRow(in: &card.row2, for: number)
-            if numberCrossed2 == 5 {
-                bingo += numberCrossed2
-            }
-            
-            let numberCrossed3 = checkRow(in: &card.row3, for: number)
-            if numberCrossed3 == 5 {
-                bingo += numberCrossed3
-            }
-            
-            if bingo == 15 {
-                isWinner = true
-            }
+            checkRow(in: &card.row1, for: number)
+            checkRow(in: &card.row2, for: number)
+            checkRow(in: &card.row3, for: number)
         }
     }
     
-    private func checkRow(in row: inout[(number: String, isCrossed: Bool)], for number: Int) -> Int {
+    private func checkRow(in row: inout[(number: String, isCrossed: Bool)], for number: Int) {
         if let index = row.firstIndex(where: { $0.number == number.formatted() }) {
             row[index].isCrossed = true
         }
@@ -81,6 +66,8 @@ extension Player {
             }
         }
         
-        return numberCrossed
+        if numberCrossed == 5 {
+            isWinner = true
+        }
     }
 }

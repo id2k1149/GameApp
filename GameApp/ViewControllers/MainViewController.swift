@@ -64,7 +64,6 @@ class MainViewController: UIViewController {
     // MARK: - @IBActions
     @IBAction func yesButtonTapped() {
         tapButton(isYesButton: true)
-        drawHumanCard(for: players[0])
     }
     
     @IBAction func noButtonTapped() {
@@ -145,17 +144,45 @@ extension MainViewController {
         questionLabelToArray?.forEach {
             guard let number = Int($0) else {return}
             
-            if isYesButton {
+            switch isYesButton {
+                
+            case true:
+                let countBefore = playerOne.card.numbersOnCard.count
                 playerOne.checkCard(for: number)
+                let countAfter = playerOne.card.numbersOnCard.count
+                if countBefore == countAfter {
+                    playerOne.mistake += 1
+                    showAlert(with: "You made a mistake!!!", and: "You don't have this number. \n It was mistake #\(playerOne.mistake) of 3")
+                }
+                
+            case false:
+                let countBefore = playerOne.card.numbersOnCard.count
+                playerOne.checkCard(for: number)
+                let countAfter = playerOne.card.numbersOnCard.count
+                if countBefore != countAfter {
+                    playerOne.mistake += 1
+                    showAlert(with: "You made a mistake!!!", and: "You have this number. \n It was mistake #\(playerOne.mistake) of 3")
+                }
             }
             
             playerTwo.checkCard(for: number)
         }
-    
+        
+        drawHumanCard(for: playerOne)
         drawCPUCard(for: playerTwo)
     
         if playerTwo.isWinner || playerOne.isWinner{
-            showAlert(with: "Game is over", and: "We have a winner!!!")
+            let title = "Game is over"
+            showAlert(with: title, and: "We have a winner!!!")
+            questionLabel.text = title
+            return
+        }
+        
+        if playerOne.mistake == 3 {
+            let title = "Game is over"
+            showAlert(with: title, and: "You made 3 mistakes")
+            questionLabel.text = title
+            return
         }
     
         questionLabel.text = getRandomNumber()
