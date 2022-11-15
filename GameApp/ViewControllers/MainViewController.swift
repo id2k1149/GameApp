@@ -80,6 +80,7 @@ class MainViewController: UIViewController {
     
     @IBAction func newGameButtonTapped() {
         resetCards()
+        questionLabel.text = getRandomNumber()
         startNewGame.isHidden = true
         yesButton.isHidden = false
         noButton.isHidden = false
@@ -156,8 +157,7 @@ extension MainViewController {
         players = Player.getPlayersList()
         
         Bag.shared.barrels = Array(1...90)
-        print(Bag.shared.barrels.count)
-        
+            
         for index in 0..<player1View1Collection.count {
             player1View1Collection[index].backgroundColor = .systemBackground
         }
@@ -204,7 +204,8 @@ extension MainViewController {
                 let countAfter = playerOne.card.numbersOnCard.count
                 if countBefore == countAfter {
                     playerOne.mistakes += 1
-                    showAlert(with: "You made a mistake!!!", and: "You don't have this number. \n It was mistake #\(playerOne.mistakes) of 3")
+                    showAlert(with: "You made a mistake!!!",
+                              and: "You don't have this number. \n It was mistake #\(playerOne.mistakes) of 3")
                 }
                 
             case false:
@@ -213,7 +214,8 @@ extension MainViewController {
                 let countAfter = playerOne.card.numbersOnCard.count
                 if countBefore != countAfter {
                     playerOne.mistakes += 1
-                    showAlert(with: "You made a mistake!!!", and: "You have this number. \n It was mistake #\(playerOne.mistakes) of 3")
+                    showAlert(with: "You made a mistake!!!",
+                              and: "You have this number. \n It was mistake #\(playerOne.mistakes) of 3")
                 }
             }
             
