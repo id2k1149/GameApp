@@ -29,7 +29,7 @@ extension Player {
     static func getPlayersList() -> [Player] {
         var players: [Player] = []
         
-        for count in 0...2 {
+        for count in 0...1 {
             switch count {
             case 0:
                 let player = Player(isHumam: true)

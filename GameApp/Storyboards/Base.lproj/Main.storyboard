@@ -17,6 +17,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Atr-2t-yGg">
+                                <rect key="frame" x="284" y="48" width="114" height="34.5"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Reset cards"/>
+                                <connections>
+                                    <action selector="resetButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="MjK-Yu-Auk"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Do you have  ...  in your card?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZu-sr-BiK">
                                 <rect key="frame" x="16" y="98" width="382" height="27.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
@@ -1012,11 +1020,6 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Atr-2t-yGg">
-                                <rect key="frame" x="284" y="48" width="114" height="34.5"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Reset cards"/>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1045,9 +1048,6 @@
                             <constraint firstItem="Atr-2t-yGg" firstAttribute="trailing" secondItem="BZu-sr-BiK" secondAttribute="trailing" id="ylu-7m-sxo"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="dhF-kV-H2w">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="ellipsis.rectangle.fill" catalog="system" id="yu8-pL-Iv3"/>
-                    </navigationItem>
                     <connections>
                         <outlet property="noButton" destination="cIG-DM-q7p" id="9IA-ll-a13"/>
                         <outlet property="playerOneCardView" destination="Cbk-ba-9v4" id="vfg-BE-y6C"/>
@@ -1055,6 +1055,7 @@
                         <outlet property="playerTwoCardView" destination="gSO-3d-Z8Q" id="ScV-ef-C7I"/>
                         <outlet property="playerTwoNameLabel" destination="egx-UT-lCB" id="KBU-He-mTT"/>
                         <outlet property="questionLabel" destination="BZu-sr-BiK" id="v8J-WP-WZK"/>
+                        <outlet property="resetButton" destination="Atr-2t-yGg" id="dFU-mj-iq5"/>
                         <outlet property="yesButton" destination="NUh-AL-l1J" id="eFQ-8e-LuT"/>
                         <outletCollection property="playerTwoRow1Collection" destination="e4n-G3-UXG" collectionClass="NSMutableArray" id="YSK-Yk-HJ4"/>
                         <outletCollection property="playerTwoRow1Collection" destination="xM8-E8-Ir4" collectionClass="NSMutableArray" id="tGh-5L-nnw"/>
@@ -1172,7 +1173,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ellipsis.rectangle.fill" catalog="system" width="128" height="79"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

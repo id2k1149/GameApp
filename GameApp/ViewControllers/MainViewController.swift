@@ -36,6 +36,7 @@ class MainViewController: UIViewController {
     
     @IBOutlet var yesButton: UIButton!
     @IBOutlet var noButton: UIButton!
+    @IBOutlet var resetButton: UIButton!
     
     var players: [Player] = Player.getPlayersList()
     
@@ -69,6 +70,11 @@ class MainViewController: UIViewController {
     @IBAction func noButtonTapped() {
         tapButton(isYesButton: false)
     }
+    
+    @IBAction func resetButtonTapped() {
+        resetCards()
+    }
+    
 }
 
 // MARK: - extension
@@ -125,14 +131,48 @@ extension MainViewController {
         
         for index in 0..<collectionLabel.count {
             collectionLabel[index].text = row[index].number
+            
             if row[index].isCrossed {
-                if player.isHuman {
-                    collectionView[index].backgroundColor = .green
-                } else {
-                    collectionView[index].backgroundColor = .red
+                switch player.isHuman {
+                case true: collectionView[index].backgroundColor = .green
+                case false:  collectionView[index].backgroundColor = .red
                 }
             }
+            
         }
+    }
+    
+    private func resetCards() {
+        players.removeAll()
+        players = Player.getPlayersList()
+        
+        for index in 0..<player1View1Collection.count {
+            player1View1Collection[index].backgroundColor = .systemBackground
+        }
+        
+        for index in 0..<player1View2Collection.count {
+            player1View2Collection[index].backgroundColor = .systemBackground
+        }
+        
+        for index in 0..<player1View3Collection.count {
+            player1View3Collection[index].backgroundColor = .systemBackground
+        }
+        
+        for index in 0..<player2View1Collection.count {
+            player2View1Collection[index].backgroundColor = .systemBackground
+        }
+        
+        for index in 0..<player2View2Collection.count {
+            player2View2Collection[index].backgroundColor = .systemBackground
+        }
+        
+        for index in 0..<player2View3Collection.count {
+            player2View3Collection[index].backgroundColor = .systemBackground
+        }
+        
+        drawHumanCard(for: players[0])
+        drawCPUCard(for: players[1])
+        
     }
     
     private func tapButton(isYesButton: Bool) {
