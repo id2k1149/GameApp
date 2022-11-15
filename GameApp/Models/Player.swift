@@ -12,7 +12,7 @@ class Player {
     let isHuman: Bool
     var isWinner: Bool = false
     var card = Card()
-    var mistake = 0
+    var mistakes = 0
     
     init(isHumam: Bool = true) {
         self.isHuman = isHumam

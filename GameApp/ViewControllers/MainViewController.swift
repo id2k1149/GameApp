@@ -203,8 +203,8 @@ extension MainViewController {
                 playerOne.checkCard(for: number)
                 let countAfter = playerOne.card.numbersOnCard.count
                 if countBefore == countAfter {
-                    playerOne.mistake += 1
-                    showAlert(with: "You made a mistake!!!", and: "You don't have this number. \n It was mistake #\(playerOne.mistake) of 3")
+                    playerOne.mistakes += 1
+                    showAlert(with: "You made a mistake!!!", and: "You don't have this number. \n It was mistake #\(playerOne.mistakes) of 3")
                 }
                 
             case false:
@@ -212,8 +212,8 @@ extension MainViewController {
                 playerOne.checkCard(for: number)
                 let countAfter = playerOne.card.numbersOnCard.count
                 if countBefore != countAfter {
-                    playerOne.mistake += 1
-                    showAlert(with: "You made a mistake!!!", and: "You have this number. \n It was mistake #\(playerOne.mistake) of 3")
+                    playerOne.mistakes += 1
+                    showAlert(with: "You made a mistake!!!", and: "You have this number. \n It was mistake #\(playerOne.mistakes) of 3")
                 }
             }
             
@@ -233,7 +233,7 @@ extension MainViewController {
             return
         }
         
-        if playerOne.mistake == 3 {
+        if playerOne.mistakes == 3 {
             let title = "Game is over"
             showAlert(with: title, and: "You made 3 mistakes")
             questionLabel.text = title
