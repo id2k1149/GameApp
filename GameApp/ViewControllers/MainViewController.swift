@@ -146,6 +146,8 @@ extension MainViewController {
         players.removeAll()
         players = Player.getPlayersList()
         
+        Bag.shared.barrels = Array(1...90)
+        
         for index in 0..<player1View1Collection.count {
             player1View1Collection[index].backgroundColor = .systemBackground
         }
