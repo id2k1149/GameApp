@@ -84,6 +84,7 @@ class MainViewController: UIViewController {
         startNewGame.isHidden = true
         yesButton.isHidden = false
         noButton.isHidden = false
+        resetButton.isHidden = false
     }
 }
 
@@ -231,6 +232,7 @@ extension MainViewController {
             questionLabel.text = title
             yesButton.isHidden = true
             noButton.isHidden = true
+            resetButton.isHidden = true
             startNewGame.isHidden = false
             return
         }
@@ -241,6 +243,7 @@ extension MainViewController {
             questionLabel.text = title
             yesButton.isHidden = true
             noButton.isHidden = true
+            resetButton.isHidden = true
             startNewGame.isHidden = false
             return
         }
