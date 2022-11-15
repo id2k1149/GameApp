@@ -1020,6 +1020,21 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q9Y-Mo-Bwh">
+                                <rect key="frame" x="132" y="752" width="150" height="42"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="O2N-J9-6xE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="New Game">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="newGameButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="XGA-SO-zec"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1034,12 +1049,14 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5md-FB-qd2" secondAttribute="bottom" constant="25" id="KGl-ct-WST"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ph4-hF-948" secondAttribute="trailing" constant="16" id="Lgg-nK-ZZA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Cbk-ba-9v4" secondAttribute="trailing" constant="16" id="OFm-Em-pcK"/>
+                            <constraint firstItem="q9Y-Mo-Bwh" firstAttribute="top" secondItem="gSO-3d-Z8Q" secondAttribute="bottom" constant="195" id="RaX-rE-V1k"/>
                             <constraint firstItem="egx-UT-lCB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="SnF-7G-GCM"/>
                             <constraint firstItem="gSO-3d-Z8Q" firstAttribute="top" secondItem="egx-UT-lCB" secondAttribute="bottom" constant="20" id="TFx-hj-hir"/>
                             <constraint firstItem="5md-FB-qd2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="VzI-Yr-Tm8"/>
                             <constraint firstItem="gSO-3d-Z8Q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="XDb-6y-E1V"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5md-FB-qd2" secondAttribute="trailing" constant="16" id="YH1-oi-8uc"/>
                             <constraint firstItem="5md-FB-qd2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zf8-1r-VjY"/>
+                            <constraint firstItem="q9Y-Mo-Bwh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ak7-Fs-vfY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gSO-3d-Z8Q" secondAttribute="trailing" constant="16" id="dMj-KF-YSf"/>
                             <constraint firstItem="Cbk-ba-9v4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="gcN-Uz-G6E"/>
                             <constraint firstItem="Cbk-ba-9v4" firstAttribute="top" secondItem="Ph4-hF-948" secondAttribute="bottom" constant="20" id="pTu-Ql-QdT"/>
@@ -1056,6 +1073,7 @@
                         <outlet property="playerTwoNameLabel" destination="egx-UT-lCB" id="KBU-He-mTT"/>
                         <outlet property="questionLabel" destination="BZu-sr-BiK" id="v8J-WP-WZK"/>
                         <outlet property="resetButton" destination="Atr-2t-yGg" id="dFU-mj-iq5"/>
+                        <outlet property="startNewGame" destination="q9Y-Mo-Bwh" id="fjR-wE-3jN"/>
                         <outlet property="yesButton" destination="NUh-AL-l1J" id="eFQ-8e-LuT"/>
                         <outletCollection property="playerTwoRow1Collection" destination="e4n-G3-UXG" collectionClass="NSMutableArray" id="YSK-Yk-HJ4"/>
                         <outletCollection property="playerTwoRow1Collection" destination="xM8-E8-Ir4" collectionClass="NSMutableArray" id="tGh-5L-nnw"/>
@@ -1175,6 +1193,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

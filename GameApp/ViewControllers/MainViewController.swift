@@ -34,6 +34,7 @@ class MainViewController: UIViewController {
     @IBOutlet var playerTwoRow2Collection: [UILabel]!
     @IBOutlet var playerTwoRow3Collection: [UILabel]!
     
+    @IBOutlet var startNewGame: UIButton!
     @IBOutlet var yesButton: UIButton!
     @IBOutlet var noButton: UIButton!
     @IBOutlet var resetButton: UIButton!
@@ -59,6 +60,8 @@ class MainViewController: UIViewController {
         
         yesButton.layer.cornerRadius = 10
         noButton.layer.cornerRadius = 10
+        startNewGame.layer.cornerRadius = 10
+        startNewGame.isHidden = true
         
     }
     
@@ -75,6 +78,12 @@ class MainViewController: UIViewController {
         resetCards()
     }
     
+    @IBAction func newGameButtonTapped() {
+        resetCards()
+        startNewGame.isHidden = true
+        yesButton.isHidden = false
+        noButton.isHidden = false
+    }
 }
 
 // MARK: - extension
@@ -147,6 +156,7 @@ extension MainViewController {
         players = Player.getPlayersList()
         
         Bag.shared.barrels = Array(1...90)
+        print(Bag.shared.barrels.count)
         
         for index in 0..<player1View1Collection.count {
             player1View1Collection[index].backgroundColor = .systemBackground
@@ -217,6 +227,9 @@ extension MainViewController {
             let title = "Game is over"
             showAlert(with: title, and: "We have a winner!!!")
             questionLabel.text = title
+            yesButton.isHidden = true
+            noButton.isHidden = true
+            startNewGame.isHidden = false
             return
         }
         
@@ -224,6 +237,9 @@ extension MainViewController {
             let title = "Game is over"
             showAlert(with: title, and: "You made 3 mistakes")
             questionLabel.text = title
+            yesButton.isHidden = true
+            noButton.isHidden = true
+            startNewGame.isHidden = false
             return
         }
     
