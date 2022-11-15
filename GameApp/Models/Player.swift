@@ -17,9 +17,9 @@ class Player {
     init(isHumam: Bool = true) {
         self.isHuman = isHumam
         if isHumam {
-            name = "My"
+            name = "Your"
         } else {
-            name = "CPU Player"
+            name = "Player #2"
         }
     }
     
