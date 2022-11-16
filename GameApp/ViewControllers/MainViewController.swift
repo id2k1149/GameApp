@@ -235,7 +235,7 @@ extension MainViewController {
     
         if playerTwo.isWinner || playerOne.isWinner{
             let title = "Game is over"
-            showAlert(with: title, and: "We have a winner!!!")
+            showAlert(with: title, and: "We have a winner!!! 5 numbers are in row!!!")
             questionLabel.text = title
             yesButton.isHidden = true
             noButton.isHidden = true
@@ -246,7 +246,7 @@ extension MainViewController {
         
         if playerOne.mistakes == 3 {
             let title = "Game is over"
-            showAlert(with: title, and: "You made 3 mistakes")
+            showAlert(with: title, and: "You made 3 mistakes. You are loser.")
             questionLabel.text = title
             yesButton.isHidden = true
             noButton.isHidden = true
