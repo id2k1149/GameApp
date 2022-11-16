@@ -158,6 +158,13 @@ extension MainViewController {
         players = Player.getPlayersList()
         
         Bag.shared.barrels = Array(1...90)
+        
+        let questionLabelToArray = questionLabel.text?.split(separator: " ")
+        
+        questionLabelToArray?.forEach {
+            guard let number = Int($0) else {return}
+            Bag.shared.barrels.removeAll(where: {$0 == number})
+        }
             
         for index in 0..<player1View1Collection.count {
             player1View1Collection[index].backgroundColor = .systemBackground
